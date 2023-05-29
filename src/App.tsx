@@ -1,8 +1,14 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Nav from "./Nav";
+import AppRouter from "./components/AppRouter";
 
 const App: FC = () => {
-  return <Nav />;
+  return (
+    <>
+      <Nav />
+      <AppRouter />
+    </>
+  );
 };
 
 export default App;

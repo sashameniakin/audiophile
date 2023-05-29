@@ -83,6 +83,14 @@ module.exports = {
           lineHeight: "25px",
         },
       ],
+      button: [
+        "13px",
+        {
+          fontWeight: "700",
+          lineHeight: "17.76px",
+          letterSpacing: "1px",
+        },
+      ],
     },
     screens: {},
     extend: {},
