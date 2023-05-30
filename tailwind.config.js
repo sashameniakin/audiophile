@@ -10,6 +10,7 @@ module.exports = {
       secWhite: "hsl(0, 0%, 98%)",
       pureWhite: "hsl(0, 0%, 100%)",
       pureBlack: "hsl(0, 0%, 0%)",
+      buttonGray: "hsl(0, 0%, 30%)",
     },
     fontSize: {
       h1: [
