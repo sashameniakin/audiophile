@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Nav from "./Nav";
+import Nav from "./components/Nav";
 import AppRouter from "./components/AppRouter";
 import Footer from "./components/Footer";
 

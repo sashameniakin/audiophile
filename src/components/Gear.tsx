@@ -17,7 +17,7 @@ const Gear: FC = () => {
         </p>
       </article>
       <img
-        src="./images/home/image-best-gear.jpg"
+        src="./images/shared/image-best-gear.jpg"
         alt="best-gear"
         className="rounded-lg w-1/2"
       />

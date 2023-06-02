@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Button from "./components/UI/Button";
+import Button from "./UI/Button";
 
 const Nav: FC = () => {
   const location = useLocation();
@@ -55,7 +55,9 @@ const Nav: FC = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button>SEE PRODUCT</Button>
+        <Link to="/headphones/xx99-markII">
+          <Button>SEE PRODUCT</Button>
+        </Link>
       </aside>
       <h2
         className={`${
