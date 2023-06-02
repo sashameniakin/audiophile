@@ -1,28 +1,13 @@
 import { FC } from "react";
-import Category from "../components/Home/Category";
+import Categories from "../components/Categories";
 import Button from "../components/UI/Button";
+import Gear from "../components/Gear";
 
 const Home: FC = () => {
   return (
-    <>
-      <section className="flex gap-[30px] w-[80%] mx-auto mt-[180px] mb-[168px] items-center justify-between">
-        <Category
-          category="HEADPHONES"
-          image="./images/home/image-category-thumbnail-headphones.png"
-          alt="headphones"
-        />
-        <Category
-          category="SPEAKERS"
-          image="./images/home/image-category-thumbnail-speakers.png"
-          alt="speakers"
-        />
-        <Category
-          category="EARPHONES"
-          image="./images/home/image-category-thumbnail-earphones.png"
-          alt="earphones"
-        />
-      </section>
-      <section className="bg-orange w-[80%] mx-auto rounded-lg relative mb-12 overflow-hidden">
+    <main className="w-[80%] mx-auto ">
+      <Categories />
+      <section className="bg-orange rounded-lg relative mb-12 overflow-hidden">
         <img
           src="./images/pattern-circles.svg"
           alt="circles"
@@ -44,7 +29,25 @@ const Home: FC = () => {
           </aside>
         </article>
       </section>
-    </>
+      <section className="bg-[url('./assets/images/home/image-speaker-zx7.jpg')]  mb-12 rounded-lg bg-cover bg-no-repeat bg-center">
+        <aside className="flex flex-col pl-[95px] py-[101px] gap-8">
+          <p className="text-h4 ">ZX7 SPEAKER</p>
+          <Button third>SEE PRODUCT</Button>
+        </aside>
+      </section>
+      <section className="flex mb-[200px] gap-[30px]">
+        <img
+          src="./images/home/image-earphones-yx1.jpg"
+          alt="eerphones"
+          className="rounded-lg w-1/2"
+        />
+        <article className="flex flex-col justify-center pl-[95px] gap-8 bg-gray w-1/2 rounded-lg">
+          <p className="text-h4">YX1 EARPHONES</p>
+          <Button third>SEE PRODUCT</Button>
+        </article>
+      </section>
+      <Gear />
+    </main>
   );
 };
 
