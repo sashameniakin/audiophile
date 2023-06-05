@@ -4,12 +4,12 @@ import Home from "../pages/Home";
 import Headphones from "../pages/Headphones";
 import Speakers from "../pages/Speakers";
 import Earphones from "../pages/Earphones";
-import XX99MarkI from "../pages/Headphones/XX99MarkI";
-import XX99MarkII from "../pages/Headphones/XX99MarkII";
-import XX59 from "../pages/Headphones/XX59";
-import ZX7 from "../pages/Speakers/ZX7";
-import ZX9 from "../pages/Speakers/ZX9";
-import YX1 from "../pages/Earphones/YX1";
+import XX99MarkI from "../pages/XX99MarkI";
+import XX99MarkII from "../pages/XX99MarkII";
+import XX59 from "../pages/XX59";
+import ZX7 from "../pages/ZX7";
+import ZX9 from "../pages/ZX9";
+import YX1 from "../pages/YX1";
 
 const AppRouter: FC = () => {
   return (

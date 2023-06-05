@@ -20,7 +20,7 @@ const Category: FC<Props> = ({ category, image, alt, direction }) => {
               SHOP
             </p>
             <img
-              src="./images/icon-arrow-right.svg"
+              src="../images/icon-arrow-right.svg"
               alt="arrow-right"
               className="w-[8px] h-[12px]"
             />
