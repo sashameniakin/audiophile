@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Button from "./UI/Button";
+import { Link } from "react-router-dom";
 
 type Props = {
   image1: string;
@@ -11,6 +12,9 @@ type Props = {
   product1: string;
   product2: string;
   product3: string;
+  link1: string;
+  link2: string;
+  link3: string;
 };
 
 const YouMayAlsoLike: FC<Props> = ({
@@ -23,23 +27,32 @@ const YouMayAlsoLike: FC<Props> = ({
   product1,
   product2,
   product3,
+  link1,
+  link2,
+  link3,
 }) => {
   return (
-    <section className="flex gap-[30px] justify-between mb-[300px]">
+    <section className="flex gap-[30px] justify-between mb-[200px]">
       <article className="flex flex-col items-center">
         <img src={image1} alt={alt1} className="w-full rounded-lg" />
         <p className="mt-10 mb-9 text-h5">{product1}</p>
-        <Button>SEE PRODUCT</Button>
+        <Link to={link1}>
+          <Button>SEE PRODUCT</Button>
+        </Link>
       </article>
       <article className="flex flex-col items-center">
         <img src={image2} alt={alt2} className="w-full rounded-lg" />
         <p className="mt-10 mb-9 text-h5">{product2}</p>
-        <Button>SEE PRODUCT</Button>
+        <Link to={link2}>
+          <Button>SEE PRODUCT</Button>
+        </Link>
       </article>
       <article className="flex flex-col items-center">
         <img src={image3} alt={alt3} className="w-full rounded-lg" />
         <p className="mt-10 mb-9 text-h5">{product3}</p>
-        <Button>SEE PRODUCT</Button>
+        <Link to={link3}>
+          <Button>SEE PRODUCT</Button>
+        </Link>
       </article>
     </section>
   );

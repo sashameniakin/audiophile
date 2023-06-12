@@ -56,6 +56,9 @@ const XX59: FC = () => {
         product1="XX99 MARK II"
         product2="XX99 MARK I"
         product3="ZX9 SPEAKER"
+        link1="/headphones/xx99-markII"
+        link2="/headphones/xx99-markI"
+        link3="/speakers/zx9"
       />
       <Categories />
       <Gear />

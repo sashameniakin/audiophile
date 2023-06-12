@@ -59,6 +59,9 @@ const YX1: FC = () => {
         product1="XX99 MARK I"
         product2="XX59"
         product3="ZX9 SPEAKER"
+        link1="/headphones/xx99-markI"
+        link2="/headphones/xx59"
+        link3="/speakers/zx9"
       />
       <Categories />
       <Gear />

@@ -11,6 +11,7 @@ module.exports = {
       pureWhite: "hsl(0, 0%, 100%)",
       pureBlack: "hsl(0, 0%, 0%)",
       buttonGray: "hsl(0, 0%, 30%)",
+      bgGray: "	hsl(0, 0%, 0%, 0.5)",
     },
     fontSize: {
       h1: [
