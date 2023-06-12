@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./Button";
+import Cart from "./Cart";
 
 const Nav: FC = () => {
   const location = useLocation();
+  const [visible, setVisible] = useState<boolean>(false);
 
   return (
     <nav
@@ -38,7 +40,16 @@ const Nav: FC = () => {
             EARPHONES
           </Link>
         </div>
-        <img src="./images/icon-cart.svg" alt="cart" className="h-[23.33px]" />
+        <button
+          className="hover:cursor-pointer"
+          onClick={() => setVisible(true)}
+        >
+          <img
+            src="./images/icon-cart.svg"
+            alt="cart"
+            className="h-[23.33px]"
+          />
+        </button>
       </section>
       <aside
         className={`${
@@ -74,6 +85,16 @@ const Nav: FC = () => {
           ? "SPEAKERS"
           : "EARPHONES"}
       </h2>
+      <Cart visible={visible} setVisible={setVisible}>
+        <section className="flex flex-col">
+          <div className="flex justify-between gap-[150px]">
+            <p className="text-h6">CART</p>
+            <p className="text-body opacity-50 underline decoration-pureBlack/50">
+              Remove all
+            </p>
+          </div>
+        </section>
+      </Cart>
     </nav>
   );
 };

@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 type Props = {
-  children: string;
+  children: ReactNode;
   secondary?: boolean;
   third?: boolean;
 };
