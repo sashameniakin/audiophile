@@ -19,6 +19,7 @@ const YX1: FC = () => {
         Go Back
       </button>
       <MainProduct
+        /*   id="4" */
         image="../images/product-yx1-earphones/desktop/image-product.jpg"
         alt="YX1"
         new_product
