@@ -19,6 +19,7 @@ const XX59: FC = () => {
         Go Back
       </button>
       <MainProduct
+        /*   id="1" */
         image="../images/product-xx59-headphones/desktop/image-product.jpg"
         alt="XX59"
         product="XX59 HEADPHONES"

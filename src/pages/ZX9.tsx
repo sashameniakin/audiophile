@@ -19,6 +19,7 @@ const ZX9: FC = () => {
         Go Back
       </button>
       <MainProduct
+        /*      id="6" */
         image="../images/product-zx9-speaker/desktop/image-product.jpg"
         alt="ZX9"
         product="ZX9 SPEAKER"

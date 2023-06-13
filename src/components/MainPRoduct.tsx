@@ -1,7 +1,10 @@
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
 import Button from "./UI/Button";
+import { ProductContext } from "../context/context";
+import { IProducts, ProductsContextType } from "../@types/products";
 
 type Props = {
+  /*  id: string; */
   image: string;
   alt: string;
   new_product?: boolean;
@@ -11,6 +14,7 @@ type Props = {
 };
 
 const MainProduct: FC<Props> = ({
+  /* id, */
   image,
   alt,
   new_product,
@@ -19,6 +23,18 @@ const MainProduct: FC<Props> = ({
   price,
 }) => {
   const [count, setCount] = useState<number>(0);
+  const [data, setData] = useState<IProducts | any>();
+  const { addProduct } = useContext(ProductContext) as ProductsContextType;
+
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+    setData({
+      /*    id: id, */
+      title: product,
+      quantity: count,
+    });
+    addProduct(data);
+  }
+
   return (
     <article className="flex items-center gap-[125px] mb-[160px]">
       <img src={image} alt={alt} className="w-1/2 rounded-lg" />
@@ -50,7 +66,7 @@ const MainProduct: FC<Props> = ({
               +
             </button>
           </div>
-          <Button>ADD TO CART</Button>
+          <Button handleClick={handleClick}>ADD TO CART</Button>
         </section>
       </aside>
     </article>

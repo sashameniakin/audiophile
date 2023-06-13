@@ -20,6 +20,7 @@ const XX99MarkII: FC = () => {
         Go Back
       </button>
       <MainProduct
+        /*   id="3" */
         image="../images/product-xx99-mark-two-headphones/desktop/image-product.jpg"
         alt="marktwo"
         new_product
