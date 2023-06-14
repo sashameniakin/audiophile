@@ -15,7 +15,7 @@ const Cart: FC<Props> = ({ children, visible, setVisible }) => {
       onClick={() => setVisible(false)}
     >
       <article
-        className="bg-pureWhite mt-8 mr-[165px] rounded-lg p-3"
+        className="bg-pureWhite mt-8 mr-[165px] rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         {children}

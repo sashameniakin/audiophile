@@ -10,6 +10,7 @@ import XX59 from "../pages/XX59";
 import ZX7 from "../pages/ZX7";
 import ZX9 from "../pages/ZX9";
 import YX1 from "../pages/YX1";
+import Checkout from "../pages/Checkout";
 
 const AppRouter: FC = () => {
   return (
@@ -24,6 +25,7 @@ const AppRouter: FC = () => {
       <Route path="/speakers/zx7" element={<ZX7 />} />
       <Route path="/speakers/zx9" element={<ZX9 />} />
       <Route path="/earphones/yx1" element={<YX1 />} />
+      <Route path="/checkout" element={<Checkout />} />
     </Routes>
   );
 };

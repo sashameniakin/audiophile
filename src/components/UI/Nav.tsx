@@ -1,11 +1,23 @@
-import { FC, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Button from "./Button";
 import Cart from "./Cart";
+import { ProductContext } from "../../context/context";
+import { ProductsContextType } from "../../@types/products";
+import CartProduct from "../CartProduct";
 
 const Nav: FC = () => {
   const location = useLocation();
   const [visible, setVisible] = useState<boolean>(false);
+
+  const { products, removeProducts, totalPrice } = useContext(
+    ProductContext
+  ) as ProductsContextType;
+
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+    removeProducts(products);
+    localStorage.clear();
+  }
 
   return (
     <nav
@@ -86,13 +98,35 @@ const Nav: FC = () => {
           : "EARPHONES"}
       </h2>
       <Cart visible={visible} setVisible={setVisible}>
-        <section className="flex flex-col">
-          <div className="flex justify-between gap-[150px]">
-            <p className="text-h6">CART</p>
-            <p className="text-body opacity-50 underline decoration-pureBlack/50">
+        <section className="flex flex-col px-[32px] pt-8">
+          <div className="flex justify-between gap-[150px] mb-8">
+            <p className="text-h6">CART ({products?.length})</p>
+            <button
+              onClick={handleClick}
+              className="text-body opacity-50 underline decoration-pureBlack/50 hover:text-orange hover:opacity-100 hover:decoration-orange"
+            >
               Remove all
-            </p>
+            </button>
           </div>
+          <section className="flex flex-col">
+            {products?.map((product, i) => (
+              <CartProduct key={i} product={product} products={products} />
+            ))}
+          </section>
+          <section className="flex justify-between pt-3 pb-6">
+            <p className="text-body opacity-50">TOTAL</p>
+            <p className="text-h6 tracking-normal">
+              $ {totalPrice.toLocaleString()}
+            </p>
+          </section>
+          <Link to="/checkout">
+            <button
+              onClick={() => setVisible(false)}
+              className=" flex justify-center w-full mb-8 py-4  text-button bg-orange text-pureWhite hover:bg-secOrange"
+            >
+              CHECKOUT
+            </button>
+          </Link>
         </section>
       </Cart>
     </nav>

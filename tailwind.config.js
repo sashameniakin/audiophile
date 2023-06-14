@@ -93,6 +93,20 @@ module.exports = {
           letterSpacing: "1px",
         },
       ],
+      cart_price: [
+        "14px",
+        {
+          fontWeight: "700",
+          lineHeight: "25px",
+        },
+      ],
+      cart_title: [
+        "15px",
+        {
+          fontWeight: "700",
+          lineHeight: "25px",
+        },
+      ],
     },
     screens: {},
     extend: {},

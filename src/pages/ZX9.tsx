@@ -19,13 +19,15 @@ const ZX9: FC = () => {
         Go Back
       </button>
       <MainProduct
-        /*      id="6" */
+        id="6"
         image="../images/product-zx9-speaker/desktop/image-product.jpg"
         alt="ZX9"
         product="ZX9 SPEAKER"
         new_product
         description="Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups."
-        price="$4,500"
+        price={4500}
+        imgCart="../images/cart/image-zx9-speaker.jpg"
+        shortTitle="ZX9"
       />
       <ProductDescription
         description1="Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and stereo XLR inputs, allowing you to have up to five wired source devices connected for easy switching. Improved bluetooth technology offers near lossless audio quality at up to 328ft (100m)."
