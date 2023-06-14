@@ -19,12 +19,14 @@ const ZX7: FC = () => {
         Go Back
       </button>
       <MainProduct
-        /*     id="5" */
+        id="5"
         image="../images/product-zx7-speaker/desktop/image-product.jpg"
         alt="ZX7"
         product="ZX7 SPEAKER"
         description="Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
-        price="$3,500"
+        price={3500}
+        imgCart="../images/cart/image-zx7-speaker.jpg"
+        shortTitle="ZX7"
       />
       <ProductDescription
         description1="Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage."

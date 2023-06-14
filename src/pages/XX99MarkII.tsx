@@ -20,13 +20,15 @@ const XX99MarkII: FC = () => {
         Go Back
       </button>
       <MainProduct
-        /*   id="3" */
+        id="3"
         image="../images/product-xx99-mark-two-headphones/desktop/image-product.jpg"
         alt="marktwo"
         new_product
         product="XX99 MARK II HEADPHONES"
         description="The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound."
-        price="$2,999"
+        price={2999}
+        imgCart="../images/cart/image-xx99-mark-two-headphones.jpg"
+        shortTitle="XX99 MK II"
       />
 
       <ProductDescription

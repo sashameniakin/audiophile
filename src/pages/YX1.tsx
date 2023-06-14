@@ -19,13 +19,15 @@ const YX1: FC = () => {
         Go Back
       </button>
       <MainProduct
-        /*   id="4" */
+        id="4"
         image="../images/product-yx1-earphones/desktop/image-product.jpg"
         alt="YX1"
         new_product
         product="YX1 WIRELESS EARPHONES"
         description="Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature."
-        price="$599"
+        price={599}
+        imgCart="../images/cart/image-yx1-earphones.jpg"
+        shortTitle="YX1"
       />
       <ProductDescription
         description1="Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound."

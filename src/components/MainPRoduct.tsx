@@ -1,38 +1,45 @@
 import { FC, useContext, useState } from "react";
 import Button from "./UI/Button";
 import { ProductContext } from "../context/context";
-import { IProducts, ProductsContextType } from "../@types/products";
+import { ProductsContextType } from "../@types/products";
 
 type Props = {
-  /*  id: string; */
+  id: string;
   image: string;
   alt: string;
   new_product?: boolean;
   product: string;
   description: string;
-  price: string;
+  price: number;
+  imgCart: string;
+  shortTitle: string;
 };
 
 const MainProduct: FC<Props> = ({
-  /* id, */
+  id,
   image,
   alt,
   new_product,
   product,
   description,
   price,
+  imgCart,
+  shortTitle,
 }) => {
-  const [count, setCount] = useState<number>(0);
-  const [data, setData] = useState<IProducts | any>();
+  const [count, setCount] = useState<number>(1);
+
   const { addProduct } = useContext(ProductContext) as ProductsContextType;
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
-    setData({
-      /*    id: id, */
-      title: product,
+    console.log(product);
+    addProduct({
+      id: id,
+      title: shortTitle,
       quantity: count,
+      price: price,
+      img: imgCart,
+      alt: alt,
     });
-    addProduct(data);
   }
 
   return (
@@ -49,19 +56,19 @@ const MainProduct: FC<Props> = ({
 
         <p className="text-h2 mb-8">{product}</p>
         <p className="text-body mb-10 opacity-50">{description}</p>
-        <p className="mb-[47px] text-h6">{price}</p>
+        <p className="mb-[47px] text-h6">$ {price.toLocaleString()}</p>
         <section className="flex gap-4">
           <div className="w-[120px] h-[48px] bg-gray flex gap-5 items-center justify-between px-[20px]">
             <button
-              onClick={() => setCount((prev) => Math.max(prev - 1, 0))}
-              className="text-button opacity-25"
+              onClick={() => setCount((prev) => Math.max(prev - 1, 1))}
+              className="text-button opacity-25 hover:text-orange hover:opacity-100"
             >
               -
             </button>
             <p className="text-button">{count}</p>
             <button
               onClick={() => setCount((prev) => prev + 1)}
-              className="text-button opacity-25"
+              className="text-button opacity-25 hover:text-orange hover:opacity-100"
             >
               +
             </button>

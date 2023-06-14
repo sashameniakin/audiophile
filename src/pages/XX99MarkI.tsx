@@ -19,12 +19,14 @@ const XX99MarkI: FC = () => {
         Go Back
       </button>
       <MainProduct
-        /*   id="2" */
+        id="2"
         image="../images/product-xx99-mark-one-headphones/desktop/image-product.jpg"
         alt="markone"
         product="XX99 MARK I HEADPHONES"
         description="As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go."
-        price="$1,750"
+        price={1750}
+        imgCart="../images/cart/image-xx99-mark-one-headphones.jpg"
+        shortTitle="XX99 MK I"
       />
       <ProductDescription
         description1="As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz."
