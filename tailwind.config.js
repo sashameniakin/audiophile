@@ -12,6 +12,7 @@ module.exports = {
       pureBlack: "hsl(0, 0%, 0%)",
       buttonGray: "hsl(0, 0%, 30%)",
       bgGray: "	hsl(0, 0%, 0%, 0.5)",
+      inputBorder: "hsl(0, 0%, 81%)",
     },
     fontSize: {
       h1: [
@@ -105,6 +106,22 @@ module.exports = {
         {
           fontWeight: "700",
           lineHeight: "25px",
+        },
+      ],
+      checkout: [
+        "12px",
+        {
+          fontWeight: "700",
+          lineHeight: "16.39px",
+          letterSpacing: "-0.21px",
+        },
+      ],
+      checkbox: [
+        "14px",
+        {
+          fontWeight: "700",
+          lineHeight: "19.12px",
+          letterSpacing: "-0.25px",
         },
       ],
     },
