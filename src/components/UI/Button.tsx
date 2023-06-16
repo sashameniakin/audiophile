@@ -5,13 +5,22 @@ type Props = {
   secondary?: boolean;
   third?: boolean;
   handleClick?: React.MouseEventHandler<HTMLButtonElement>;
+  pay?: boolean;
 };
 
-const Button: FC<Props> = ({ children, secondary, third, handleClick }) => {
+const Button: FC<Props> = ({
+  children,
+  secondary,
+  third,
+  handleClick,
+  pay,
+}) => {
   return (
     <button
       onClick={handleClick}
-      className={`w-[160px] h-[48px] z-10  text-button ${
+      className={`${
+        pay ? "w-full mb-8" : "w-[160px]"
+      } h-[48px] z-10  text-button ${
         secondary
           ? "bg-pureBlack text-pureWhite hover:bg-buttonGray"
           : third

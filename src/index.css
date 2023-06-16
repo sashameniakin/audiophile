@@ -3,6 +3,18 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
 
+@layer components {
+  .radio-label:has(input:checked) {
+    @apply border-orange;
+  }
+  .email-label:has(input:invalid) {
+    @apply text-invalid;
+  }
+  .email-label:has(input:invalid) p:last-of-type {
+    @apply flex;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
