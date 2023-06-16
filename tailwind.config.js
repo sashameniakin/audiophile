@@ -13,6 +13,7 @@ module.exports = {
       buttonGray: "hsl(0, 0%, 30%)",
       bgGray: "	hsl(0, 0%, 0%, 0.5)",
       inputBorder: "hsl(0, 0%, 81%)",
+      invalid: "hsl(0, 65%, 49%)",
     },
     fontSize: {
       h1: [
