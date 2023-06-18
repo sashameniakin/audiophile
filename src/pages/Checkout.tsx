@@ -3,8 +3,12 @@ import CartProduct from "../components/CartProduct";
 import { ProductContext } from "../context/context";
 import { ProductsContextType } from "../@types/products";
 import Button from "../components/UI/Button";
+import { Link, useNavigate } from "react-router-dom";
+import Confirmation from "../components/UI/Confirmation";
 
 const Checkout: FC = () => {
+  const [visible, setVisible] = useState<boolean>(false);
+
   const { products, totalPrice } = useContext(
     ProductContext
   ) as ProductsContextType;
@@ -22,12 +26,32 @@ const Checkout: FC = () => {
     setPayment(true);
   }
 
+  const navigate = useNavigate();
+
+  function goBack() {
+    navigate(-1);
+  }
+
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    setVisible(true);
+  }
+
+  if (visible) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "unset";
+  }
+
   return (
     <main className="bg-gray ">
       <section className="w-[80%] mx-auto">
-        <p className="pt-[79px] pb-[38px] w-fit text-body opacity-50 hover:text-orange hover:opacity-100 hover:cursor-pointer">
+        <button
+          onClick={goBack}
+          className="pt-[79px] pb-[38px] w-fit text-body opacity-50 hover:text-orange hover:opacity-100 hover:cursor-pointer"
+        >
           Go Back
-        </p>
+        </button>
         <form className="flex gap-[30px]">
           <section className="bg-pureWhite w-2/3 px-[28px] mb-[141px] rounded-lg">
             <p className="pt-[54px] text-h3 mb-[41px]">CHECKOUT</p>
@@ -259,10 +283,65 @@ const Checkout: FC = () => {
                 $ {totalPrice + 50}
               </p>
             </section>
-            <Button pay>CONTINUE & PAY</Button>
+
+            <Button handleClick={handleClick} pay>
+              CONTINUE & PAY
+            </Button>
           </section>
         </form>
       </section>
+      <Confirmation visible={visible} setVisible={setVisible}>
+        <section className="flex flex-col">
+          <img
+            src="./images/icon-order-confirmation.svg"
+            alt="confirmation"
+            className="w-[64px]"
+          />
+          <p className="text-h3 mb-6 mt-8">
+            THANK YOU
+            <br /> FOR YOUR ORDER
+          </p>
+          <p className="text-body opacity-50 mb-8">
+            You will receive an email confirmation shortly.
+          </p>
+          <section className="flex mb-[46px]">
+            <article className="flex flex-col bg-gray px-6 py-6 rounded-l-lg">
+              <div className="flex justify-between items-center border-b border-b-pureBlack/10 pb-3">
+                <aside className="flex items-center gap-4">
+                  <img
+                    src={products[0].img}
+                    alt={products[0].alt}
+                    className="w-[50px] rounded-lg"
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-cart_title">{products[0].title}</p>
+                    <p className="text-cart_price opacity-50">
+                      $ {products[0].price.toLocaleString()}
+                    </p>
+                  </div>
+                  <div className="flex self-start ml-[26px]">
+                    <p className="text-cart_title opacity-50">
+                      x{products[0].quantity}
+                    </p>
+                  </div>
+                </aside>
+              </div>
+              <p className="pt-3 text-checkout opacity-50 text-center">
+                and {products.length - 1} other item(s)
+              </p>
+            </article>
+            <article className="bg-pureBlack flex flex-col justify-center items-start px-10 rounded-r-lg">
+              <p className="text-body opacity-50 text-pureWhite mb-2">
+                GRAND TOTAL
+              </p>
+              <p className="text-h6 text-pureWhite">$ {totalPrice + 50}</p>
+            </article>
+          </section>
+          <Link to="/">
+            <Button confirmation>BACK TO HOME</Button>
+          </Link>
+        </section>
+      </Confirmation>
     </main>
   );
 };

@@ -87,6 +87,19 @@ export const ProductProvider: FC<Props> = ({ children }) => {
     });
   };
 
+  const deleteItem = (id: string) => {
+    if (products.length > 1) {
+      products.filter((product: IProducts) => {
+        setProducts((products) =>
+          products.filter((product) => product.id !== id)
+        );
+      });
+    } else {
+      products.splice(0, products.length);
+      setPrice(0);
+    }
+  };
+
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
   }, [products]);
@@ -110,6 +123,7 @@ export const ProductProvider: FC<Props> = ({ children }) => {
         totalPrice,
         incrementOne,
         decrementOne,
+        deleteItem,
       }}
     >
       {children}

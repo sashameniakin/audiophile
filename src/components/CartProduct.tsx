@@ -9,12 +9,16 @@ type Props = {
 };
 
 const CartProduct: FC<Props> = ({ product, noQuantityChange }) => {
-  const { incrementOne, decrementOne } = useContext(
+  const { incrementOne, decrementOne, deleteItem } = useContext(
     ProductContext
   ) as ProductsContextType;
 
   function handleDecrement(e: React.MouseEvent<HTMLButtonElement>) {
-    decrementOne(product.id);
+    if (product.quantity > 1) {
+      decrementOne(product.id);
+    } else {
+      deleteItem(product.id);
+    }
   }
 
   function handleIncrement(e: React.MouseEvent<HTMLButtonElement>) {

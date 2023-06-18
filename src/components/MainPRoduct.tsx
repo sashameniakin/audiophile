@@ -31,7 +31,6 @@ const MainProduct: FC<Props> = ({
   const { addProduct } = useContext(ProductContext) as ProductsContextType;
 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
-    console.log(product);
     addProduct({
       id: id,
       title: shortTitle,
