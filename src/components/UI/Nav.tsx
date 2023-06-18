@@ -19,6 +19,12 @@ const Nav: FC = () => {
     localStorage.clear();
   }
 
+  if (visible) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "unset";
+  }
+
   return (
     <nav
       className={`${

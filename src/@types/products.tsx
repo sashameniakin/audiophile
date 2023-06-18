@@ -14,4 +14,5 @@ export type ProductsContextType = {
   totalPrice: number;
   incrementOne: (id: string) => void;
   decrementOne: (id: string) => void;
+  deleteItem: (id: string) => void;
 };

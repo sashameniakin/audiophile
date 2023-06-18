@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-pureBlack">
+    <footer className="bg-pureBlack relative">
       <section className="w-[80%] mx-auto flex justify-between pb-9 pt-[75px]">
+        <div className="absolute w-[101px] h-[4px] bg-orange top-0" />
         <img src="../images/logo.svg" alt="logo" />
         <div className="flex gap-[34px] text-pureWhite text-sub_title tracking-[2px]">
           <Link to="/" className="hover:text-orange hover:cursor-pointer">
