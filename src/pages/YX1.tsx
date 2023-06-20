@@ -14,13 +14,18 @@ const YX1: FC = () => {
     navigate(-1);
   }
   return (
-    <main className="w-[80%] mx-auto mt-[79px]">
-      <button onClick={goBack} className="text-left text-body opacity-50 mb-14">
+    <main className="desktop:w-[80%] tablet:w-[90%] mx-auto desktop:mt-[79px] tablet:mt-[33px]">
+      <button
+        onClick={goBack}
+        className="text-left text-body opacity-50 desktop:mb-14 tablet:mb-6"
+      >
         Go Back
       </button>
       <MainProduct
         id="4"
         image="../images/product-yx1-earphones/desktop/image-product.jpg"
+        imageTablet="../images/product-yx1-earphones/tablet/image-product.jpg"
+        imageMobile="../images/product-yx1-earphones/mobile/image-product.jpg"
         alt="YX1"
         new_product
         product="YX1 WIRELESS EARPHONES"
@@ -45,17 +50,31 @@ const YX1: FC = () => {
       />
       <Collage
         image1="../images/product-yx1-earphones/desktop/image-gallery-1.jpg"
+        image1Tablet="../images/product-yx1-earphones/tablet/image-gallery-1.jpg"
+        image1Mobile="../images/product-yx1-earphones/mobile/image-gallery-1.jpg"
         image2="../images/product-yx1-earphones/desktop/image-gallery-2.jpg"
+        image2Tablet="../images/product-yx1-earphones/tablet/image-gallery-2.jpg"
+        image2Mobile="../images/product-yx1-earphones/mobile/image-gallery-2.jpg"
         image3="../images/product-yx1-earphones/desktop/image-gallery-3.jpg"
+        image3Tablet="../images/product-yx1-earphones/tablet/image-gallery-3.jpg"
+        image3Mobile="../images/product-yx1-earphones/mobile/image-gallery-3.jpg"
         alt1="image1"
         alt2="image2"
         alt3="image3"
       />
-      <h3 className="text-h3 text-center mb-16">YOU MAY ALSO LIKE</h3>
+      <h3 className="text-h3 text-center desktop:mb-16 tablet:mb-[56px]">
+        YOU MAY ALSO LIKE
+      </h3>
       <YouMayAlsoLike
         image1="../images/shared/image-xx99-mark-one-headphones.jpg"
+        image1Tablet="../images/shared/tablet/image-xx99-mark-one-headphones.jpg"
+        image1Mobile="../images/shared/mobile/image-xx99-mark-one-headphones.jpg"
         image2="../images/shared/image-xx59-headphones.jpg"
+        image2Tablet="../images/shared/tablet/image-xx59-headphones.jpg"
+        image2Mobile="../images/shared/mobile/image-xx59-headphones.jpg"
         image3="../images/shared/image-zx9-speaker.jpg"
+        image3Tablet="../images/shared/tablet/image-zx9-speaker.jpg"
+        image3Mobile="../images/shared/mobile/image-zx9-speaker.jpg"
         alt1="markone"
         alt2="XX59"
         alt3="ZX9"

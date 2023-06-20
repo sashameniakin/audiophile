@@ -125,8 +125,27 @@ module.exports = {
           letterSpacing: "-0.25px",
         },
       ],
+      tablet_new_product: [
+        "12px",
+        {
+          fontWeight: "400",
+          lineHeight: "16.39px",
+          letterSpacing: "8.57px",
+        },
+      ],
+      tablet_title: [
+        "28px",
+        {
+          fontWeight: "700",
+          lineHeight: "32px",
+          letterSpacing: "1px",
+        },
+      ],
     },
-    screens: {},
+    screens: {
+      desktop: "821px",
+      tablet: "415px",
+    },
     extend: {},
   },
   plugins: [],

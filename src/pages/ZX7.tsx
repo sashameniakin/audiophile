@@ -14,13 +14,18 @@ const ZX7: FC = () => {
     navigate(-1);
   }
   return (
-    <main className="w-[80%] mx-auto mt-[79px]">
-      <button onClick={goBack} className="text-left text-body opacity-50 mb-14">
+    <main className="desktop:w-[80%] tablet:w-[90%] mx-auto desktop:mt-[79px] tablet:mt-[33px]">
+      <button
+        onClick={goBack}
+        className="text-left text-body opacity-50 desktop:mb-14 tablet:mb-6"
+      >
         Go Back
       </button>
       <MainProduct
         id="5"
         image="../images/product-zx7-speaker/desktop/image-product.jpg"
+        imageTablet="../images/product-zx7-speaker/tablet/image-product.jpg"
+        imageMobile="../images/product-zx7-speaker/mobile/image-product.jpg"
         alt="ZX7"
         product="ZX7 SPEAKER"
         description="Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use."
@@ -44,17 +49,31 @@ const ZX7: FC = () => {
       />
       <Collage
         image1="../images/product-zx7-speaker/desktop/image-gallery-1.jpg"
+        image1Tablet="../images/product-zx7-speaker/tablet/image-gallery-1.jpg"
+        image1Mobile="../images/product-zx7-speaker/mobile/image-gallery-1.jpg"
         image2="../images/product-zx7-speaker/desktop/image-gallery-2.jpg"
+        image2Tablet="../images/product-zx7-speaker/tablet/image-gallery-2.jpg"
+        image2Mobile="../images/product-zx7-speaker/mobile/image-gallery-2.jpg"
         image3="../images/product-zx7-speaker/desktop/image-gallery-3.jpg"
+        image3Tablet="../images/product-zx7-speaker/tablet/image-gallery-3.jpg"
+        image3Mobile="../images/product-zx7-speaker/mobile/image-gallery-3.jpg"
         alt1="image1"
         alt2="image2"
         alt3="image3"
       />
-      <h3 className="text-h3 text-center mb-16">YOU MAY ALSO LIKE</h3>
+      <h3 className="text-h3 text-center desktop:mb-16 tablet:mb-[56px]">
+        YOU MAY ALSO LIKE
+      </h3>
       <YouMayAlsoLike
         image1="../images/shared/image-zx9-speaker.jpg"
+        image1Tablet="../images/shared/tablet/image-zx9-speaker.jpg"
+        image1Mobile="../images/shared/mobile/image-zx9-speaker.jpg"
         image2="../images/shared/image-xx99-mark-one-headphones.jpg"
+        image2Tablet="../images/shared/tablet/image-xx99-mark-one-headphones.jpg"
+        image2Mobile="../images/shared/mobile/image-xx99-mark-one-headphones.jpg"
         image3="../images/shared/image-xx59-headphones.jpg"
+        image3Tablet="../images/shared/tablet/image-xx59-headphones.jpg"
+        image3Mobile="../images/shared/mobile/image-xx59-headphones.jpg"
         alt1="zx9"
         alt2="markone"
         alt3="XX59"

@@ -45,16 +45,18 @@ const Checkout: FC = () => {
 
   return (
     <main className="bg-gray ">
-      <section className="w-[80%] mx-auto">
+      <section className="desktop:w-[80%] tablet:w-[90%] mx-auto">
         <button
           onClick={goBack}
-          className="pt-[79px] pb-[38px] w-fit text-body opacity-50 hover:text-orange hover:opacity-100 hover:cursor-pointer"
+          className="desktop:pt-[79px] tablet:pt-12 desktop:pb-[38px] tablet:pb-6 w-fit text-body opacity-50 hover:text-orange hover:opacity-100 hover:cursor-pointer"
         >
           Go Back
         </button>
-        <form className="flex gap-[30px]">
-          <section className="bg-pureWhite w-2/3 px-[28px] mb-[141px] rounded-lg">
-            <p className="pt-[54px] text-h3 mb-[41px]">CHECKOUT</p>
+        <form className="flex desktop:flex-row tablet:flex-col gap-[30px]">
+          <section className="bg-pureWhite desktop:w-2/3 tablet:w-full px-[28px] desktop:mb-[141px] tablet:mb-0 rounded-lg">
+            <p className="desktop:pt-[54px] tablet:pt-[30px] text-h3 mb-[41px]">
+              CHECKOUT
+            </p>
             <fieldset>
               <legend className="text-sub_title text-orange mb-4">
                 BILLING DETAILS
@@ -69,7 +71,7 @@ const Checkout: FC = () => {
                     type="text"
                     name="name"
                     id="name"
-                    className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange"
+                    className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                     placeholder="Alexei Ward"
                   />
                 </label>
@@ -83,7 +85,7 @@ const Checkout: FC = () => {
                     type="email"
                     name="email"
                     id="email"
-                    className="text-checkbox outline-none mt-2 border-[1px] border-inputBorder rounded-lg pl-6 py-5 focus:border-orange focus:invalid:border-invalid focus:invalid:border-[2px] focus:invalid:text-pureBlack focus:invalid:pb-4"
+                    className="text-checkbox outline-none mt-2 border-[1px] border-inputBorder rounded-lg pl-6 py-5 focus:border-orange focus:invalid:border-invalid focus:invalid:border-[2px] focus:invalid:text-pureBlack focus:invalid:pb-4 caret-orange"
                     placeholder="alexei@mail.com"
                   />
                 </label>
@@ -98,7 +100,7 @@ const Checkout: FC = () => {
                   type="text"
                   name="phone-number"
                   id="phone-number"
-                  className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange"
+                  className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                   placeholder="+1 202-555-0136"
                 />
               </label>
@@ -114,7 +116,7 @@ const Checkout: FC = () => {
                   type="text"
                   name="address"
                   id="address"
-                  className="text-checkbox outline-none mt-2 border-[1px] border-inputBorder rounded-lg pl-6 py-5 focus:border-orange"
+                  className="text-checkbox outline-none mt-2 border-[1px] border-inputBorder rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                   placeholder="1137 Williams Avenue"
                 />
               </label>
@@ -129,7 +131,7 @@ const Checkout: FC = () => {
                     type="text"
                     name="zip-code"
                     id="zip-code"
-                    className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange"
+                    className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                     placeholder="10001"
                   />
                 </label>
@@ -143,7 +145,7 @@ const Checkout: FC = () => {
                     type="text"
                     name="city"
                     id="city"
-                    className="text-checkbox outline-none border-[1px] border-inputBorder mt-2 rounded-lg pl-6 py-5 focus:border-orange"
+                    className="text-checkbox outline-none border-[1px] border-inputBorder mt-2 rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                     placeholder="New York"
                   />
                 </label>
@@ -158,7 +160,7 @@ const Checkout: FC = () => {
                   type="text"
                   name="country"
                   id="country"
-                  className="text-checkbox outline-none border-[1px] border-inputBorder mt-2 rounded-lg pl-6 py-5 focus:border-orange"
+                  className="text-checkbox outline-none border-[1px] border-inputBorder mt-2 rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                   placeholder="United States"
                 />
               </label>
@@ -167,7 +169,7 @@ const Checkout: FC = () => {
               <legend className="text-sub_title text-orange mb-4">
                 PAYMENT DETAILS
               </legend>
-              <section className="flex justify-between mb-12">
+              <section className="flex justify-between desktop:mb-12 tablet:mb-6">
                 <p className="text-checkout">Payment Method</p>
                 <div className=" flex flex-col w-1/2 gap-4 pl-2">
                   <label
@@ -202,7 +204,9 @@ const Checkout: FC = () => {
                 </div>
               </section>
               <section
-                className={`${payment ? "flex" : "hidden"} gap-4 mt-6 mb-12`}
+                className={`${
+                  payment ? "flex" : "hidden"
+                } gap-4 mt-6 desktop:mb-12 tablet:mb-[30px]`}
               >
                 <label
                   className="text-checkout flex flex-col w-1/2"
@@ -213,7 +217,7 @@ const Checkout: FC = () => {
                     type="text"
                     name="Number"
                     id="Number"
-                    className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange"
+                    className="text-checkbox outline-none border-[1px] mt-2 border-inputBorder rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                     placeholder="238521993"
                   />
                 </label>
@@ -227,7 +231,7 @@ const Checkout: FC = () => {
                     type="text"
                     name="PIN"
                     id="PIN"
-                    className="text-checkbox outline-none border-[1px] border-inputBorder mt-2 rounded-lg pl-6 py-5 focus:border-orange"
+                    className="text-checkbox outline-none border-[1px] border-inputBorder mt-2 rounded-lg pl-6 py-5 focus:border-orange caret-orange"
                     placeholder="6891"
                   />
                 </label>
@@ -251,7 +255,7 @@ const Checkout: FC = () => {
               </section>
             </fieldset>
           </section>
-          <section className="flex flex-col w-1/3 bg-pureWhite px-8 rounded-lg mb-[141px] h-fit">
+          <section className="flex flex-col desktop:w-1/3 tablet:w-full bg-pureWhite px-8 rounded-lg mb-[141px] h-fit">
             <p className="text-h6 pt-8 pb-8">SUMMARY</p>
             <section className="flex flex-col ">
               {products?.map((product, i) => (

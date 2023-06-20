@@ -4,8 +4,14 @@ import { Link } from "react-router-dom";
 
 type Props = {
   image1: string;
+  image1Tablet: string;
+  image1Mobile: string;
   image2: string;
+  image2Tablet: string;
+  image2Mobile: string;
   image3: string;
+  image3Tablet: string;
+  image3Mobile: string;
   alt1: string;
   alt2: string;
   alt3: string;
@@ -19,8 +25,14 @@ type Props = {
 
 const YouMayAlsoLike: FC<Props> = ({
   image1,
+  image1Tablet,
+  image1Mobile,
   image2,
+  image2Tablet,
+  image2Mobile,
   image3,
+  image3Tablet,
+  image3Mobile,
   alt1,
   alt2,
   alt3,
@@ -32,24 +44,39 @@ const YouMayAlsoLike: FC<Props> = ({
   link3,
 }) => {
   return (
-    <section className="flex gap-[30px] justify-between mb-[200px]">
+    <section className="flex desktop:gap-[30px] tablet:gap-[11px] justify-between desktop:mb-[200px] tablet:mb-[160px]">
       <article className="flex flex-col items-center">
-        <img src={image1} alt={alt1} className="w-full rounded-lg" />
-        <p className="mt-10 mb-9 text-h5">{product1}</p>
+        <picture>
+          <source media="(min-width:821px)" srcSet={image1} />
+          <source media="(min-width:415px)" srcSet={image1Tablet} />
+          <img src={image1Mobile} alt={alt1} className="rounded-lg" />
+        </picture>
+        {/*  <img src={image1} alt={alt1} className="w-full rounded-lg" /> */}
+        <p className="mt-10 desktop:mb-9 tablet:mb-8 text-h5">{product1}</p>
         <Link to={link1}>
           <Button>SEE PRODUCT</Button>
         </Link>
       </article>
       <article className="flex flex-col items-center">
-        <img src={image2} alt={alt2} className="w-full rounded-lg" />
-        <p className="mt-10 mb-9 text-h5">{product2}</p>
+        <picture>
+          <source media="(min-width:821px)" srcSet={image2} />
+          <source media="(min-width:415px)" srcSet={image2Tablet} />
+          <img src={image2Mobile} alt={alt2} className="rounded-lg" />
+        </picture>
+
+        <p className="mt-10 desktop:mb-9 tablet:mb-8 text-h5">{product2}</p>
         <Link to={link2}>
           <Button>SEE PRODUCT</Button>
         </Link>
       </article>
       <article className="flex flex-col items-center">
-        <img src={image3} alt={alt3} className="w-full rounded-lg" />
-        <p className="mt-10 mb-9 text-h5">{product3}</p>
+        <picture>
+          <source media="(min-width:821px)" srcSet={image3} />
+          <source media="(min-width:415px)" srcSet={image3Tablet} />
+          <img src={image3Mobile} alt={alt3} className="rounded-lg" />
+        </picture>
+
+        <p className="mt-10 desktop:mb-9 tablet:mb-8 text-h5">{product3}</p>
         <Link to={link3}>
           <Button>SEE PRODUCT</Button>
         </Link>

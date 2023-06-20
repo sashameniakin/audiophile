@@ -5,10 +5,13 @@ import Cart from "./Cart";
 import { ProductContext } from "../../context/context";
 import { ProductsContextType } from "../../@types/products";
 import CartProduct from "../CartProduct";
+import Menu from "./Menu";
+import Categories from "../Categories";
 
 const Nav: FC = () => {
   const location = useLocation();
   const [visible, setVisible] = useState<boolean>(false);
+  const [menu, setMenu] = useState<boolean>(false);
 
   const { products, removeProducts, totalPrice } = useContext(
     ProductContext
@@ -19,7 +22,7 @@ const Nav: FC = () => {
     localStorage.clear();
   }
 
-  if (visible) {
+  if (visible || menu) {
     document.body.style.overflow = "hidden";
   } else {
     document.body.style.overflow = "unset";
@@ -29,13 +32,23 @@ const Nav: FC = () => {
     <nav
       className={`${
         location.pathname === "/"
-          ? "bg-[url('./assets/images/image-hero.jpg')]  bg-cover bg-no-repeat bg-center"
+          ? "desktop:bg-[url('./assets/images/image-hero.jpg')] tablet:bg-[url('./assets/images/image-header.jpg')] bg-cover bg-no-repeat bg-center"
           : "bg-pureBlack"
       }`}
     >
       <section className="flex justify-between mx-auto w-[80%] pt-8 pb-9 border-b border-pureWhite/25">
-        <img src="./images/logo.svg" alt="logo" />
-        <div className="flex gap-[34px] text-pureWhite text-sub_title tracking-[2px]">
+        <div className="flex gap-10 desktop:hidden">
+          <button onClick={() => setMenu(true)}>
+            <img src="./images/shared/tablet/icon-hamburger.svg" alt="menu" />
+          </button>
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+        <img
+          src="./images/logo.svg"
+          alt="logo"
+          className="hidden desktop:flex"
+        />
+        <div className="hidden desktop:flex gap-[34px] text-pureWhite text-sub_title tracking-[2px]">
           <Link to="/" className="hover:text-orange hover:cursor-pointer">
             HOME
           </Link>
@@ -72,7 +85,7 @@ const Nav: FC = () => {
       <aside
         className={`${
           location.pathname === "/"
-            ? "flex flex-col mx-auto w-[80%] pt-32 pb-[158px] gap-6"
+            ? "flex flex-col desktop:items-start tablet:items-center mx-auto w-[80%] pt-32 pb-[158px] gap-6"
             : "hidden"
         }`}
       >
@@ -80,7 +93,7 @@ const Nav: FC = () => {
         <h1 className="text-h1 text-pureWhite w-[396px]">
           XX99 MARK II HEADPHONES
         </h1>
-        <p className="text-pureWhite opacity-75 text-body w-[349px] pb-4">
+        <p className="text-pureWhite opacity-75 desktop:text-left tablet:text-center text-body w-[349px] pb-4">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
@@ -106,7 +119,7 @@ const Nav: FC = () => {
       <Cart visible={visible} setVisible={setVisible}>
         <section className="flex flex-col px-[32px] pt-8">
           <div className="flex justify-between gap-[150px] mb-8">
-            <p className="text-h6">CART ({products?.length})</p>
+            <p className="text-h6">CART ({products?.length || 0})</p>
             <button
               onClick={handleClick}
               className="text-body opacity-50 underline decoration-pureBlack/50 hover:text-orange hover:opacity-100 hover:decoration-orange"
@@ -135,6 +148,11 @@ const Nav: FC = () => {
           </Link>
         </section>
       </Cart>
+      {menu && (
+        <Menu menu={menu} setMenu={setMenu}>
+          <Categories menu />
+        </Menu>
+      )}
     </nav>
   );
 };
