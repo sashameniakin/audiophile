@@ -2,12 +2,12 @@ import { FC } from "react";
 
 const Gear: FC = () => {
   return (
-    <section className="flex mb-[200px] gap-[30px]">
-      <article className="flex flex-col justify-center w-1/2 gap-8 pr-[10%]">
-        <p className="text-h2">
+    <section className="flex desktop:flex-row tablet:flex-col-reverse items-center desktop:mb-[200px] tablet:mb-[96px] desktop:gap-[30px] tablet:gap-[63px]">
+      <article className="flex flex-col justify-center desktop:w-1/2 tablet:w-[80%] gap-8 desktop:pr-[10%] tablet:pr-0">
+        <p className="text-h2 desktop:text-left tablet:text-center">
           BRINGING YOU THE <span className="text-orange">BEST</span> AUDIO GEAR
         </p>
-        <p className="text-body opacity-50">
+        <p className="text-body desktop:text-left tablet:text-center opacity-50">
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for
@@ -16,11 +16,17 @@ const Gear: FC = () => {
           best place to buy your portable audio equipment.
         </p>
       </article>
-      <img
-        src="../images/shared/image-best-gear.jpg"
-        alt="best-gear"
-        className="rounded-lg w-1/2"
-      />
+      <picture className="desktop:w-1/2 tablet:w-full">
+        <source
+          media="(min-width:821px)"
+          srcSet="../images/shared/image-best-gear.jpg"
+        />
+        <source
+          media="(min-width:415px)"
+          srcSet="../images/shared/tablet/image-best-gear.jpg"
+        />
+        <img src="" alt="" className="rounded-lg" />
+      </picture>
     </section>
   );
 };

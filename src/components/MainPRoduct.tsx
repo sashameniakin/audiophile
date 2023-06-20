@@ -13,11 +13,15 @@ type Props = {
   price: number;
   imgCart: string;
   shortTitle: string;
+  imageTablet: string;
+  imageMobile: string;
 };
 
 const MainProduct: FC<Props> = ({
   id,
   image,
+  imageTablet,
+  imageMobile,
   alt,
   new_product,
   product,
@@ -42,20 +46,31 @@ const MainProduct: FC<Props> = ({
   }
 
   return (
-    <article className="flex items-center gap-[125px] mb-[160px]">
-      <img src={image} alt={alt} className="w-1/2 rounded-lg" />
+    <article className="flex items-center desktop:gap-[125px] tablet:gap-[69px] desktop:mb-[160px] tablet:mb-[120px]">
+      <picture className="w-1/2">
+        <source media="(min-width:821px)" srcSet={image} />
+        <source media="(min-width:415px)" srcSet={imageTablet} />
+        <img src={imageMobile} alt={alt} className="rounded-lg" />
+      </picture>
+
       <aside className="w-1/2">
         <p
           className={`${
             new_product ? "block" : "hidden"
-          } text-overline text-orange mb-4`}
+          } desktop:text-overline tablet:text-tablet_new_product text-orange mb-4`}
         >
           NEW PRODUCT
         </p>
 
-        <p className="text-h2 mb-8">{product}</p>
-        <p className="text-body mb-10 opacity-50">{description}</p>
-        <p className="mb-[47px] text-h6">$ {price.toLocaleString()}</p>
+        <p className="desktop:text-h2 tablet:text-tablet_title mb-8">
+          {product}
+        </p>
+        <p className="text-body desktop:mb-10 tablet:mb-8 opacity-50">
+          {description}
+        </p>
+        <p className="desktop:mb-[47px] tablet:mb-[31px] text-h6">
+          $ {price.toLocaleString()}
+        </p>
         <section className="flex gap-4">
           <div className="w-[120px] h-[48px] bg-gray flex gap-5 items-center justify-between px-[20px]">
             <button

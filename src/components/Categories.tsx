@@ -1,9 +1,19 @@
 import { FC } from "react";
 import Category from "./Category";
 
-const Categories: FC = () => {
+type Props = {
+  menu?: boolean;
+};
+
+const Categories: FC<Props> = ({ menu }) => {
   return (
-    <section className="flex gap-[30px] mt-[270px] mb-[168px] items-center justify-between">
+    <section
+      className={`flex desktop:gap-[30px] tablet:gap-[10px] ${
+        menu
+          ? "w-[90%] mx-auto pt-[106px] pb-[56px]"
+          : "desktop:mt-[270px] tablet:mt-[146px]"
+      }  desktop:mb-[168px] tablet:mb-[96px] items-center justify-between`}
+    >
       <Category
         category="HEADPHONES"
         image="../images/shared/category/image-category-thumbnail-headphones.png"

@@ -12,7 +12,11 @@ const Category: FC<Props> = ({ category, image, alt, direction }) => {
   return (
     <article className="flex flex-col w-1/3  relative group hover:cursor-pointer">
       <Link to={direction} className="w-full flex  justify-center">
-        <img src={image} alt={alt} className="w-[70%] absolute bottom-[60px]" />
+        <img
+          src={image}
+          alt={alt}
+          className="w-[70%] absolute desktop:bottom-[60px] tablet:bottom-[110px]"
+        />
         <section className="bg-gray w-full h-[204px] pb-[30px] flex flex-col justify-end items-center rounded-lg">
           <p className="text-h6 mb-[15px]">{category}</p>
           <div className="flex gap-3 items-center">
