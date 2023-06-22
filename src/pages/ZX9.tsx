@@ -14,10 +14,10 @@ const ZX9: FC = () => {
     navigate(-1);
   }
   return (
-    <main className="desktop:w-[80%] tablet:w-[90%] mx-auto desktop:mt-[79px] tablet:mt-[33px]">
+    <main className="w-[92%] desktop:w-[80%] tablet:w-[90%] mt-4 mx-auto desktop:mt-[79px] tablet:mt-[33px]">
       <button
         onClick={goBack}
-        className="text-left text-body opacity-50 desktop:mb-14 tablet:mb-6"
+        className="text-left text-body opacity-50 mb-6 desktop:mb-14 tablet:mb-6"
       >
         Go Back
       </button>
@@ -62,7 +62,7 @@ const ZX9: FC = () => {
         alt2="image2"
         alt3="image3"
       />
-      <h3 className="text-h3 text-center desktop:mb-16 tablet:mb-[56px]">
+      <h3 className="text-description_title desktop:text-h3 tablet:text-h3 text-center mb-10 desktop:mb-16 tablet:mb-[56px]">
         YOU MAY ALSO LIKE
       </h3>
       <YouMayAlsoLike

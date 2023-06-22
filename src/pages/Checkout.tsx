@@ -45,25 +45,25 @@ const Checkout: FC = () => {
 
   return (
     <main className="bg-gray ">
-      <section className="desktop:w-[80%] tablet:w-[90%] mx-auto">
+      <section className="w-[92%] desktop:w-[80%] tablet:w-[90%] mx-auto">
         <button
           onClick={goBack}
-          className="desktop:pt-[79px] tablet:pt-12 desktop:pb-[38px] tablet:pb-6 w-fit text-body opacity-50 hover:text-orange hover:opacity-100 hover:cursor-pointer"
+          className="pt-4 desktop:pt-[79px] tablet:pt-12 pb-6 desktop:pb-[38px] tablet:pb-6 w-fit text-body opacity-50 hover:text-orange hover:opacity-100 hover:cursor-pointer"
         >
           Go Back
         </button>
-        <form className="flex desktop:flex-row tablet:flex-col gap-[30px]">
+        <form className="flex flex-col desktop:flex-row tablet:flex-col gap-[30px]">
           <section className="bg-pureWhite desktop:w-2/3 tablet:w-full px-[28px] desktop:mb-[141px] tablet:mb-0 rounded-lg">
-            <p className="desktop:pt-[54px] tablet:pt-[30px] text-h3 mb-[41px]">
+            <p className="pt-6 desktop:pt-[54px] tablet:pt-[30px] text-tablet_title desktop:text-h3 tablet:text-h3 mb-8 desktop:mb-[41px] tablet:mb-[41px]">
               CHECKOUT
             </p>
             <fieldset>
               <legend className="text-sub_title text-orange mb-4">
                 BILLING DETAILS
               </legend>
-              <section className="flex gap-4">
+              <section className="flex flex-col desktop:flex-row tablet:flex-row gap-4">
                 <label
-                  className="text-checkout flex flex-col w-1/2"
+                  className="text-checkout flex flex-col w-full desktop:w-1/2 tablet:w-1/2"
                   htmlFor="name"
                 >
                   Name
@@ -76,7 +76,7 @@ const Checkout: FC = () => {
                   />
                 </label>
 
-                <label className="text-checkout email-label flex flex-col w-1/2">
+                <label className="text-checkout email-label flex flex-col mt-[9px] desktop:mt-0 tablet:mt-0 w-full desktop:w-1/2 tablet:w-1/2">
                   <div className="flex justify-between">
                     <p>Email Address</p>
                     <p className="hidden">Wrong format</p>
@@ -92,7 +92,7 @@ const Checkout: FC = () => {
               </section>
 
               <label
-                className="text-checkout flex flex-col mt-6 w-1/2 pr-2"
+                className="text-checkout flex flex-col mt-6 w-full desktop:w-1/2 tablet:w-1/2 pr-0 desktop:pr-2 tablet:pr-2"
                 htmlFor="phone-number"
               >
                 Phone Number
@@ -121,9 +121,9 @@ const Checkout: FC = () => {
                 />
               </label>
 
-              <section className="flex gap-4 mt-6">
+              <section className="flex flex-col desktop:flex-row tablet:flex-row gap-4 mt-6">
                 <label
-                  className="text-checkout flex flex-col w-1/2"
+                  className="text-checkout flex flex-col w-full desktop:w-1/2 tablet:w-1/2"
                   htmlFor="zip-code"
                 >
                   ZIP Code
@@ -137,7 +137,7 @@ const Checkout: FC = () => {
                 </label>
 
                 <label
-                  className="text-checkout  flex flex-col w-1/2"
+                  className="text-checkout  flex flex-col w-full desktop:w-1/2 tablet:w-1/2"
                   htmlFor="city"
                 >
                   City
@@ -152,7 +152,7 @@ const Checkout: FC = () => {
               </section>
 
               <label
-                className="text-checkout flex flex-col w-1/2 pr-2 mt-6"
+                className="text-checkout flex flex-col w-full desktop:w-1/2 tablet:w-1/2 pr-0 desktop:pr-2 tablet:pr-2 mt-6"
                 htmlFor="city"
               >
                 Country
@@ -169,9 +169,9 @@ const Checkout: FC = () => {
               <legend className="text-sub_title text-orange mb-4">
                 PAYMENT DETAILS
               </legend>
-              <section className="flex justify-between desktop:mb-12 tablet:mb-6">
+              <section className="flex flex-col desktop:flex-row tablet:flex-row justify-between desktop:mb-12 tablet:mb-6">
                 <p className="text-checkout">Payment Method</p>
-                <div className=" flex flex-col w-1/2 gap-4 pl-2">
+                <div className=" flex flex-col w-full desktop:w-1/2 tablet:w-1/2 gap-4 pl-0 desktop:pl-2 tablet:pl-2">
                   <label
                     htmlFor="emoney"
                     className="radio-label text-checkbox relative pl-[52px] flex items-center gap-4 border-[1px] border-inputBorder hover:border-orange rounded-lg py-5"

@@ -141,6 +141,22 @@ module.exports = {
           letterSpacing: "1px",
         },
       ],
+      mobile_title: [
+        "36px",
+        {
+          fontWeight: "700",
+          lineHeight: "40px",
+          letterSpacing: "1.29px",
+        },
+      ],
+      description_title: [
+        "24px",
+        {
+          fontWeight: "700",
+          lineHeight: "36px",
+          letterSpacing: "0.86px",
+        },
+      ],
     },
     screens: {
       desktop: "821px",

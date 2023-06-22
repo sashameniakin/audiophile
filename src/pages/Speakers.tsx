@@ -5,7 +5,7 @@ import Product from "../components/Product";
 
 const Speakers: FC = () => {
   return (
-    <main className="desktop:w-[80%] tablet:w-[90%] mx-auto desktop:mt-[160px] tablet:mt-[120px]">
+    <main className="w-[92%] desktop:w-[80%] tablet:w-[90%] mx-auto mt-16 desktop:mt-[160px] tablet:mt-[120px]">
       <Product
         image="./images/product-zx9-speaker/desktop/image-category-page-preview.jpg"
         imageTablet="./images/product-zx9-speaker/tablet/image-category-page-preview.jpg"

@@ -30,7 +30,7 @@ const Collage: FC<Props> = ({
   alt3,
 }) => {
   return (
-    <section className="grid grid-rows-2 grid-cols-5 desktop:gap-[30px] tablet:gap-[18px] desktop:mb-[160px] tablet:mb-[120px]">
+    <section className="flex flex-col desktop:grid tablet:grid grid-rows-2 grid-cols-5 gap-5 desktop:gap-[30px] tablet:gap-[18px] mb-[120px] desktop:mb-[160px] tablet:mb-[120px]">
       <picture className="row-start-1 row-end-2 col-start-1 col-end-3">
         <source media="(min-width:821px)" srcSet={image1} />
         <source media="(min-width:415px)" srcSet={image1Tablet} />

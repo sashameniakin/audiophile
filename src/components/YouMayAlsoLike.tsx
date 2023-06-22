@@ -44,15 +44,16 @@ const YouMayAlsoLike: FC<Props> = ({
   link3,
 }) => {
   return (
-    <section className="flex desktop:gap-[30px] tablet:gap-[11px] justify-between desktop:mb-[200px] tablet:mb-[160px]">
+    <section className="flex flex-col desktop:flex-row tablet:flex-row gap-14 desktop:gap-[30px] tablet:gap-[11px] justify-between mb-[200px] desktop:mb-[200px] tablet:mb-[160px]">
       <article className="flex flex-col items-center">
         <picture>
           <source media="(min-width:821px)" srcSet={image1} />
           <source media="(min-width:415px)" srcSet={image1Tablet} />
           <img src={image1Mobile} alt={alt1} className="rounded-lg" />
         </picture>
-        {/*  <img src={image1} alt={alt1} className="w-full rounded-lg" /> */}
-        <p className="mt-10 desktop:mb-9 tablet:mb-8 text-h5">{product1}</p>
+        <p className="mt-8 desktop:mt-10 tablet:mt-10 mb-8 desktop:mb-9 tablet:mb-8 text-h5">
+          {product1}
+        </p>
         <Link to={link1}>
           <Button>SEE PRODUCT</Button>
         </Link>
@@ -64,7 +65,9 @@ const YouMayAlsoLike: FC<Props> = ({
           <img src={image2Mobile} alt={alt2} className="rounded-lg" />
         </picture>
 
-        <p className="mt-10 desktop:mb-9 tablet:mb-8 text-h5">{product2}</p>
+        <p className="mt-8 desktop:mt-10 tablet:mt-10 mb-8 desktop:mb-9 tablet:mb-8 text-h5">
+          {product2}
+        </p>
         <Link to={link2}>
           <Button>SEE PRODUCT</Button>
         </Link>
@@ -76,7 +79,9 @@ const YouMayAlsoLike: FC<Props> = ({
           <img src={image3Mobile} alt={alt3} className="rounded-lg" />
         </picture>
 
-        <p className="mt-10 desktop:mb-9 tablet:mb-8 text-h5">{product3}</p>
+        <p className="mt-8 desktop:mt-10 tablet:mt-10 mb-8 desktop:mb-9 tablet:mb-8 text-h5">
+          {product3}
+        </p>
         <Link to={link3}>
           <Button>SEE PRODUCT</Button>
         </Link>

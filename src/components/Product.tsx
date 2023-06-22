@@ -29,9 +29,9 @@ const Product: FC<Props> = ({
     <section
       className={`flex ${
         direction_reverse
-          ? "desktop:flex-row-reverse tablet:flex-col"
-          : "desktop:flex-row tablet:flex-col"
-      } items-center desktop:gap-[125px] tablet:gap-[52px] desktop:mb-[160px] tablet:mb-[120px]`}
+          ? "flex-col desktop:flex-row-reverse tablet:flex-col"
+          : "flex-col desktop:flex-row tablet:flex-col"
+      } items-center gap-8 desktop:gap-[125px] tablet:gap-[52px] mb-[120px] desktop:mb-[160px] tablet:mb-[120px]`}
     >
       <picture className="desktop:w-1/2 tablet:w-full">
         <source media="(min-width:821px)" srcSet={image} />
@@ -39,16 +39,18 @@ const Product: FC<Props> = ({
         <img src={imageMobile} alt={alt} className="rounded-lg" />
       </picture>
 
-      <article className="desktop:w-1/2 desktop:text-left tablet:text-center tablet:w-[80%]">
+      <article className="desktop:w-1/2 text-center desktop:text-left tablet:text-center tablet:w-[80%]">
         <p
           className={`${
             new_product ? "block" : "hidden"
-          } text-overline text-orange mb-4`}
+          } text-overline text-orange mb-6 desktop:mb-4 tablet:mb-4`}
         >
           NEW PRODUCT
         </p>
-        <p className="text-h2 mb-8">{product}</p>
-        <p className="text-body desktop:mb-10 tablet:mb-6 opacity-50">
+        <p className="text-tablet_title desktop:text-h2 tablet:text-h2 mb-6 desktop:mb-8 tablet:mb-8">
+          {product}
+        </p>
+        <p className="text-body mb-6 desktop:mb-10 tablet:mb-6 opacity-50">
           {description}
         </p>
         <Link to={to}>
