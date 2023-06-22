@@ -10,12 +10,14 @@ const Cart: FC<Props> = ({ children, visible, setVisible }) => {
   return (
     <section
       className={`fixed top-[94px] bottom-0 left-0 right-0 z-40 bg-bgGray ${
-        visible ? "flex items-start justify-end" : "hidden"
+        visible
+          ? "flex items-start justify-center tablet:justify-end desktop:justify-end"
+          : "hidden"
       }`}
       onClick={() => setVisible(false)}
     >
       <article
-        className="bg-pureWhite desktop:mt-8 tablet:mt-6 desktop:mr-[165px] tablet:mr-[40px] rounded-lg"
+        className="bg-pureWhite mt-6 desktop:mt-8 tablet:mt-6 desktop:mr-[165px] tablet:mr-[40px] rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         {children}

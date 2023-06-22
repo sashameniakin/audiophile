@@ -46,29 +46,29 @@ const MainProduct: FC<Props> = ({
   }
 
   return (
-    <article className="flex items-center desktop:gap-[125px] tablet:gap-[69px] desktop:mb-[160px] tablet:mb-[120px]">
-      <picture className="w-1/2">
+    <article className="flex flex-col desktop:flex-row tablet:flex-row items-center gap-8 desktop:gap-[125px] tablet:gap-[69px] mb-[88px] desktop:mb-[160px] tablet:mb-[120px]">
+      <picture className="w-full desktop:w-1/2 tablet:w-1/2">
         <source media="(min-width:821px)" srcSet={image} />
         <source media="(min-width:415px)" srcSet={imageTablet} />
         <img src={imageMobile} alt={alt} className="rounded-lg" />
       </picture>
 
-      <aside className="w-1/2">
+      <aside className="w-full desktop:w-1/2 tablet:w-1/2">
         <p
           className={`${
             new_product ? "block" : "hidden"
-          } desktop:text-overline tablet:text-tablet_new_product text-orange mb-4`}
+          } text-overline desktop:text-overline tablet:text-tablet_new_product text-orange mb-6 desktop:mb-4 tablet:mb-4`}
         >
           NEW PRODUCT
         </p>
 
-        <p className="desktop:text-h2 tablet:text-tablet_title mb-8">
+        <p className="text-tablet_title desktop:text-h2 tablet:text-tablet_title mb-6 desktop:mb-8 tablet:mb-8">
           {product}
         </p>
-        <p className="text-body desktop:mb-10 tablet:mb-8 opacity-50">
+        <p className="text-body mb-6 desktop:mb-10 tablet:mb-8 opacity-50">
           {description}
         </p>
-        <p className="desktop:mb-[47px] tablet:mb-[31px] text-h6">
+        <p className="mb-[31px] desktop:mb-[47px] tablet:mb-[31px] text-h6">
           $ {price.toLocaleString()}
         </p>
         <section className="flex gap-4">

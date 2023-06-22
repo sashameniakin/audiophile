@@ -32,21 +32,25 @@ const Nav: FC = () => {
     <nav
       className={`${
         location.pathname === "/"
-          ? "desktop:bg-[url('./assets/images/image-hero.jpg')] tablet:bg-[url('./assets/images/image-header.jpg')] bg-cover bg-no-repeat bg-center"
+          ? "bg-[url('./assets/images/image-header-mobile.jpg')] desktop:bg-[url('./assets/images/image-hero.jpg')] tablet:bg-[url('./assets/images/image-header.jpg')] bg-cover bg-no-repeat bg-center"
           : "bg-pureBlack"
       }`}
     >
-      <section className="flex justify-between mx-auto w-[80%] pt-8 pb-9 border-b border-pureWhite/25">
+      <section className="flex justify-between mx-auto w-[92%] tablet:w-[90%] desktop:w-[80%] pt-8 pb-9 border-b border-pureWhite/25">
         <div className="flex gap-10 desktop:hidden">
           <button onClick={() => setMenu(true)}>
             <img src="./images/shared/tablet/icon-hamburger.svg" alt="menu" />
           </button>
-          <img src="./images/logo.svg" alt="logo" />
+          <img
+            src="./images/logo.svg"
+            alt="logo"
+            className="hidden tablet:flex desktop:hidden"
+          />
         </div>
         <img
           src="./images/logo.svg"
           alt="logo"
-          className="hidden desktop:flex"
+          className="flex tablet:hidden desktop:flex"
         />
         <div className="hidden desktop:flex gap-[34px] text-pureWhite text-sub_title tracking-[2px]">
           <Link to="/" className="hover:text-orange hover:cursor-pointer">
@@ -85,15 +89,15 @@ const Nav: FC = () => {
       <aside
         className={`${
           location.pathname === "/"
-            ? "flex flex-col desktop:items-start tablet:items-center mx-auto w-[80%] pt-32 pb-[158px] gap-6"
+            ? "flex flex-col items-center desktop:items-start tablet:items-center mx-auto w-[92%] tablet:w-[90%] desktop:w-[80%] pt-[108px] desktop:pt-32 tablet:pt-[126px] pb-[112px] tablet:pb-[167px] desktop:pb-[158px] gap-4 desktop:gap-6 tablet:gap-6"
             : "hidden"
         }`}
       >
         <p className="text-overline text-pureWhite opacity-50">NEW PRODUCT</p>
-        <h1 className="text-h1 text-pureWhite w-[396px]">
-          XX99 MARK II HEADPHONES
+        <h1 className="text-mobile_title desktop:text-h1 tablet:text-h1 text-center tablet:text-center desktop:text-left text-pureWhite">
+          XX99 MARK II{<br />} HEADPHONES
         </h1>
-        <p className="text-pureWhite opacity-75 desktop:text-left tablet:text-center text-body w-[349px] pb-4">
+        <p className="text-pureWhite opacity-75 text-center desktop:text-left tablet:text-center text-body w-[349px] pt-2 tablet:pt-0 desktop:pt-0 pb-3 tablet:pb-4 desktop:pb-4">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
@@ -106,7 +110,7 @@ const Nav: FC = () => {
           location.pathname === "/headphones" ||
           location.pathname === "/speakers" ||
           location.pathname === "/earphones"
-            ? "pt-[98px] pb-[97px] text-pureWhite text-center text-h2"
+            ? "py-8 desktop:pt-[98px] tablet:pt-[105px] desktop:pb-[97px] tablet:pb-[97px] text-pureWhite text-center text-h4 desktop:text-h2 tablet:text-h2"
             : "hidden"
         }`}
       >

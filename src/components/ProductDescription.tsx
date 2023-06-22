@@ -30,9 +30,11 @@ const ProductDescription: FC<Props> = ({
   pos5quantity,
 }) => {
   return (
-    <section className="flex desktop:flex-row tablet:flex-col desktop:gap-[125px] tablet:gap-[120px] desktop:mb-[160px] tablet:mb-[120px]">
+    <section className="flex flex-col desktop:flex-row tablet:flex-col gap-[88px] desktop:gap-[125px] tablet:gap-[120px] mb-[120px] desktop:mb-[160px] tablet:mb-[120px]">
       <article className="flex flex-col desktop:w-[55%] tablet:w-full">
-        <p className="text-h3 mb-8">FEATURES</p>
+        <p className="text-description_title desktop:text-h3 tablet:text-h3 mb-6 desktop:mb-8 tablet:mb-8">
+          FEATURES
+        </p>
         <p className="text-body opacity-50">
           {description1}
           <br />
@@ -40,9 +42,11 @@ const ProductDescription: FC<Props> = ({
           {description2}
         </p>
       </article>
-      <aside className="flex desktop:flex-col tablet:flex-row">
-        <p className="text-h3 mb-8 desktop:w-full tablet:w-1/2">IN THE BOX</p>
-        <section className="flex gap-[21px] desktop:w-full tablet:w-1/2">
+      <aside className="flex flex-col desktop:flex-col tablet:flex-row ">
+        <p className="text-description_title desktop:text-h3 tablet:text-h3 mb-6 desktop:mb-8 tablet:mb-8 w-full desktop:w-full tablet:w-1/2">
+          IN THE BOX
+        </p>
+        <section className="flex gap-[21px] w-full desktop:w-full tablet:w-1/2">
           <div className="flex flex-col gap-2 text-body text-orange font-bold">
             <p>{pos1quantity}</p>
             <p>{pos2quantity}</p>
