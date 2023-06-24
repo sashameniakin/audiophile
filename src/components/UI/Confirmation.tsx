@@ -9,13 +9,13 @@ type Props = {
 const Confirmation: FC<Props> = ({ children, visible, setVisible }) => {
   return (
     <section
-      className={`fixed top-[94px] bottom-0 left-0 right-0 z-40 bg-bgGray ${
-        visible ? "flex items-start justify-center" : "hidden"
+      className={`fixed top-0 bottom-0 left-0 right-0 z-20 bg-bgGray ${
+        visible ? "flex items-center  justify-center" : "hidden"
       }`}
       onClick={() => setVisible(false)}
     >
       <article
-        className="bg-pureWhite mt-8 mx-auto px-12 py-12 rounded-lg"
+        className="bg-pureWhite mt-0 mx-6 desktop:mx-auto tablet:mx-auto px-8 desktop:px-12 tablet:px-12 py-8 desktop:py-12 tablet:py-12 rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         {children}

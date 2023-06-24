@@ -36,23 +36,23 @@ const Nav: FC = () => {
           : "bg-pureBlack"
       }`}
     >
-      <section className="flex justify-between mx-auto w-[92%] tablet:w-[90%] desktop:w-[80%] pt-8 pb-9 border-b border-pureWhite/25">
+      <section className="flex justify-between mx-auto w-[92%] tablet:w-[90%] desktop:w-[80%] pt-8 pb-9 border-b border-pureWhite/25 z-50">
         <div className="flex gap-10 desktop:hidden">
-          <button onClick={() => setMenu(true)}>
+          <button onClick={() => setMenu(true)} className="z-50">
             <img src="./images/shared/tablet/icon-hamburger.svg" alt="menu" />
           </button>
           <img
             src="./images/logo.svg"
             alt="logo"
-            className="hidden tablet:flex desktop:hidden"
+            className="hidden tablet:flex desktop:hidden z-50"
           />
         </div>
         <img
           src="./images/logo.svg"
           alt="logo"
-          className="flex tablet:hidden desktop:flex"
+          className="flex tablet:hidden desktop:flex z-50"
         />
-        <div className="hidden desktop:flex gap-[34px] text-pureWhite text-sub_title tracking-[2px]">
+        <div className="hidden desktop:flex gap-[34px] text-pureWhite text-sub_title tracking-[2px] z-50">
           <Link to="/" className="hover:text-orange hover:cursor-pointer">
             HOME
           </Link>
@@ -76,7 +76,7 @@ const Nav: FC = () => {
           </Link>
         </div>
         <button
-          className="hover:cursor-pointer"
+          className="hover:cursor-pointer z-50"
           onClick={() => setVisible(true)}
         >
           <img

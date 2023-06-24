@@ -157,6 +157,14 @@ module.exports = {
           letterSpacing: "0.86px",
         },
       ],
+      confirmation_title: [
+        "24px",
+        {
+          fontWeight: "700",
+          lineHeight: "28px",
+          letterSpacing: "0.86px",
+        },
+      ],
     },
     screens: {
       desktop: "821px",

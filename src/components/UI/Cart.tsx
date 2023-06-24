@@ -9,7 +9,7 @@ type Props = {
 const Cart: FC<Props> = ({ children, visible, setVisible }) => {
   return (
     <section
-      className={`fixed top-[94px] bottom-0 left-0 right-0 z-40 bg-bgGray ${
+      className={`fixed top-0 bottom-0 left-0 right-0 z-40 bg-bgGray ${
         visible
           ? "flex items-start justify-center tablet:justify-end desktop:justify-end"
           : "hidden"
