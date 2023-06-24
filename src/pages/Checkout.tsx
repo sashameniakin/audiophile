@@ -169,8 +169,8 @@ const Checkout: FC = () => {
               <legend className="text-sub_title text-orange mb-4">
                 PAYMENT DETAILS
               </legend>
-              <section className="flex flex-col desktop:flex-row tablet:flex-row justify-between desktop:mb-12 tablet:mb-6">
-                <p className="text-checkout">Payment Method</p>
+              <section className="flex flex-col desktop:flex-row tablet:flex-row justify-between mb-8 desktop:mb-12 tablet:mb-6">
+                <p className="text-checkout mb-3">Payment Method</p>
                 <div className=" flex flex-col w-full desktop:w-1/2 tablet:w-1/2 gap-4 pl-0 desktop:pl-2 tablet:pl-2">
                   <label
                     htmlFor="emoney"
@@ -205,11 +205,13 @@ const Checkout: FC = () => {
               </section>
               <section
                 className={`${
-                  payment ? "flex" : "hidden"
-                } gap-4 mt-6 desktop:mb-12 tablet:mb-[30px]`}
+                  payment
+                    ? "flex flex-col desktop:flex-row tablet:flex-row"
+                    : "hidden"
+                } gap-4 mb-8 desktop:mb-12 tablet:mb-[30px]`}
               >
                 <label
-                  className="text-checkout flex flex-col w-1/2"
+                  className="text-checkout flex flex-col w-full desktop:w-1/2 tablet:w-1/2"
                   htmlFor="Number"
                 >
                   e-Money Number
@@ -223,7 +225,7 @@ const Checkout: FC = () => {
                 </label>
 
                 <label
-                  className="text-checkout  flex flex-col w-1/2"
+                  className="text-checkout  flex flex-col w-full desktop:w-1/2 tablet:w-1/2"
                   htmlFor="PIN"
                 >
                   e-Money PIN
@@ -246,7 +248,7 @@ const Checkout: FC = () => {
                   alt="delivery"
                   className="w-[48px] h-[48px]"
                 />
-                <p className="text-body opacity-50">
+                <p className="text-body text-justify desktop:text-left tablet:text-left opacity-50">
                   The ‘Cash on Delivery’ option enables you to pay in cash when
                   our delivery courier arrives at your residence. Just make sure
                   your address is correct so that your order will not be
@@ -301,15 +303,15 @@ const Checkout: FC = () => {
             alt="confirmation"
             className="w-[64px]"
           />
-          <p className="text-h3 mb-6 mt-8">
+          <p className="text-confirmation_title desktop:text-h3 tablet:text-h3 mb-4 desktop:mb-6 tablet:mb-6 mt-6 desktop:mt-8 tablet:mt-8">
             THANK YOU
             <br /> FOR YOUR ORDER
           </p>
-          <p className="text-body opacity-50 mb-8">
+          <p className="text-body opacity-50 mb-6 desktop:mb-8 tablet:mb-8">
             You will receive an email confirmation shortly.
           </p>
-          <section className="flex mb-[46px]">
-            <article className="flex flex-col bg-gray px-6 py-6 rounded-l-lg">
+          <section className="flex flex-col desktop:flex-row tablet:flex-row mb-[23px] desktop:mb-[46px] tablet:mb-[46px]">
+            <article className="flex flex-col bg-gray px-6 py-6 rounded-t-lg desktop:rounded-l-lg desktop:rounded-r-none tablet:rounded-l-lg tablet:rounded-r-none">
               <div className="flex justify-between items-center border-b border-b-pureBlack/10 pb-3">
                 <aside className="flex items-center gap-4">
                   <img
@@ -334,7 +336,7 @@ const Checkout: FC = () => {
                 and {products.length - 1} other item(s)
               </p>
             </article>
-            <article className="bg-pureBlack flex flex-col justify-center items-start px-10 rounded-r-lg">
+            <article className="bg-pureBlack flex flex-col justify-center items-start pt-[15px] pb-[19px] px-10 rounded-b-lg desktop:rounded-r-lg desktop:rounded-l-none tablet:rounded-r-lg tablet:rounded-l-none">
               <p className="text-body opacity-50 text-pureWhite mb-2">
                 GRAND TOTAL
               </p>

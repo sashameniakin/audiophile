@@ -9,10 +9,13 @@ type Props = {
 const Menu: FC<Props> = ({ children, menu, setMenu }) => {
   return (
     <div
-      className="fixed top-[94px] bottom-0 left-0 right-0 bg-bgGray z-10"
+      className="fixed top-0 bottom-0 left-0 right-0 bg-bgGray z-40"
       onClick={() => setMenu(false)}
     >
-      <div className="bg-pureWhite" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="bg-pureWhite mt-[94px]"
+        onClick={(e) => e.stopPropagation()}
+      >
         {children}
       </div>
     </div>
