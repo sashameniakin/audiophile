@@ -18,7 +18,7 @@ const XX99MarkII: FC = () => {
     <main className="w-[92%] desktop:w-[80%] tablet:w-[90%] mx-auto mt-4 desktop:mt-[79px] tablet:mt-[33px]">
       <button
         onClick={goBack}
-        className="text-left text-body opacity-50 mb-6 desktop:mb-14 tablet:mb-6"
+        className="text-left text-body opacity-50 mb-6 desktop:mb-14 tablet:mb-6 hover:text-orange hover:opacity-100 hover:cursor-pointer"
       >
         Go Back
       </button>

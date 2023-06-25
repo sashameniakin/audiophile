@@ -15,6 +15,7 @@ const Checkout: FC = () => {
 
   const [payment, setPayment] = useState<boolean>(false);
   const [cash, setCash] = useState<boolean>(false);
+  const [showItems, setShowItems] = useState<boolean>(false);
 
   function cashDelivery() {
     setCash(true);
@@ -311,9 +312,9 @@ const Checkout: FC = () => {
             You will receive an email confirmation shortly.
           </p>
           <section className="flex flex-col desktop:flex-row tablet:flex-row mb-[23px] desktop:mb-[46px] tablet:mb-[46px]">
-            <article className="flex flex-col bg-gray px-6 py-6 rounded-t-lg desktop:rounded-l-lg desktop:rounded-r-none tablet:rounded-l-lg tablet:rounded-r-none">
-              <div className="flex justify-between items-center border-b border-b-pureBlack/10 pb-3">
-                <aside className="flex items-center gap-4">
+            <article className="w-full desktop:w-7/12 tablet:w-7/12 flex flex-col bg-gray px-6 py-6 rounded-t-lg desktop:rounded-l-lg desktop:rounded-r-none tablet:rounded-l-lg tablet:rounded-r-none">
+              <aside className="flex items-center justify-between pb-3">
+                <div className="flex gap-4">
                   <img
                     src={products[0].img}
                     alt={products[0].alt}
@@ -325,22 +326,66 @@ const Checkout: FC = () => {
                       $ {products[0].price.toLocaleString()}
                     </p>
                   </div>
-                  <div className="flex self-start ml-[26px]">
-                    <p className="text-cart_title opacity-50">
-                      x{products[0].quantity}
-                    </p>
-                  </div>
-                </aside>
-              </div>
-              <p className="pt-3 text-checkout opacity-50 text-center">
-                and {products.length - 1} other item(s)
+                </div>
+
+                <p className="flex self-start text-cart_title opacity-50">
+                  x{products[0].quantity}
+                </p>
+              </aside>
+
+              {showItems &&
+                products.map((product, index) => {
+                  if (index > 0) {
+                    return (
+                      <aside
+                        key={index}
+                        className="flex justify-between items-center  pb-3"
+                      >
+                        <div className="flex gap-4">
+                          <img
+                            src={product.img}
+                            alt={product.alt}
+                            className="w-[50px] rounded-lg"
+                          />
+                          <div className="flex flex-col">
+                            <p className="text-cart_title">{product.title}</p>
+                            <p className="text-cart_price opacity-50">
+                              $ {product.price.toLocaleString()}
+                            </p>
+                          </div>
+                        </div>
+
+                        <p className="flex self-start text-cart_title opacity-50">
+                          x{product.quantity}
+                        </p>
+                      </aside>
+                    );
+                  }
+                })}
+              <p
+                onClick={() =>
+                  showItems ? setShowItems(false) : setShowItems(true)
+                }
+                className="pt-3 text-checkout opacity-50 text-center border-t border-t-pureBlack/30 hover:cursor-pointer hover:text-orange"
+              >
+                {showItems && products.length > 1
+                  ? "View less"
+                  : `and ${products.length - 1} other item(s)`}
               </p>
             </article>
-            <article className="bg-pureBlack flex flex-col justify-center items-start pt-[15px] pb-[19px] px-10 rounded-b-lg desktop:rounded-r-lg desktop:rounded-l-none tablet:rounded-r-lg tablet:rounded-l-none">
+            <article
+              className={`bg-pureBlack w-full desktop:w-5/12 tablet:w-5/12 flex flex-col ${
+                showItems && products.length > 1
+                  ? "justify-end"
+                  : "justify-center"
+              } items-start pt-[15px] pb-[19px] px-10 desktop:px-8 tablet:px-10 rounded-b-lg desktop:rounded-r-lg desktop:rounded-l-none tablet:rounded-r-lg tablet:rounded-l-none`}
+            >
               <p className="text-body opacity-50 text-pureWhite mb-2">
                 GRAND TOTAL
               </p>
-              <p className="text-h6 text-pureWhite">$ {totalPrice + 50}</p>
+              <p className="text-h6 text-pureWhite">
+                $ {(totalPrice + 50).toLocaleString()}
+              </p>
             </article>
           </section>
           <Link to="/">

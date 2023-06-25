@@ -46,7 +46,7 @@ export const ProductProvider: FC<Props> = ({ children }) => {
     } else {
       if (products?.filter((position) => position.id === id).length > 0) {
         position[0].quantity += quantity;
-        console.log(products);
+
         setProducts([...products]);
       } else {
         const newProduct: IProducts = {
@@ -58,7 +58,6 @@ export const ProductProvider: FC<Props> = ({ children }) => {
           alt: product.alt,
         };
         setProducts([...products, newProduct]);
-        console.log(products);
       }
     }
   };
