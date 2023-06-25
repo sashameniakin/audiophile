@@ -5,7 +5,7 @@ import Gear from "../components/Gear";
 
 const Home: FC = () => {
   return (
-    <main className="w-[92%] desktop:w-[80%] tablet:w-[90%] mx-auto ">
+    <main className="w-[92%] desktop:w-[80%] tablet:w-[90%] mx-auto">
       <Categories />
       <section className="bg-orange rounded-lg relative mb-6 desktop:mb-12 tablet:mb-8 desktop:pb-0 tablet:pb-16 overflow-hidden">
         <img
@@ -27,7 +27,6 @@ const Home: FC = () => {
               src="./images/home/mobile/image-speaker-zx9.png"
               alt="speaker"
               className="w-[60%] desktop:w-[80%] desktop:ml-10"
-              /*      className="w-[60%] pt-[55px] ml-[52px] pb-8 desktop:pb-0 tablet:pb-0 desktop:w-[84%] desktop:ml-0 tablet:ml-[165px] tablet:w-[35%] desktop:pt-24 tablet:pt-[82px] mb-[-7px] " */
             />
           </picture>
 
